@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="windows-1252" ?> 
+<OpenShipments xmlns="x-schema:OpenShipments.xdr">
+  <OpenShipment ShipmentOption="" ProcessStatus="">   
+	<ShipTo>  
+		<CompanyOrName>ABC Company</CompanyOrName> 
+		<Attention>George</Attention> 
+		<Address1>6th Avenue</Address1> 
+		<CityOrTown>New York</CityOrTown> 
+		<CountryTerritory>US</CountryTerritory> 
+		<PostalCode>10001</PostalCode> 
+		<StateProvinceCounty>NY</StateProvinceCounty>       
+		<Telephone>212-444-3232</Telephone> 
+		<EmailAddress>George@ABCCompany.com</EmailAddress> 
+	</ShipTo> 	
+	<ShipmentInformation> 
+		<VoidIndicator />
+		<ShipperNumber>123456</ShipperNumber>
+		<ServiceType>Ground</ServiceType>
+		<PackageType>Package</PackageType> 
+		<NumberOfPackages>1</NumberOfPackages> 
+		<ShipmentActualWeight>1</ShipmentActualWeight> 
+		<DescriptionOfGoods>Computer Hardware</DescriptionOfGoods> 
+		<TrackingNumbers>
+			<TrackingNumber>a9dc992b1d933510adbadbf0876c0c97</TrackingNumber>
+		</TrackingNumbers>
+		<Reference1>test_ref1</Reference1>
+		<Reference2>test_ref2</Reference2>
+		<DocumentOnly/>
+		<GoodsNotInFreeCirculation/>
+		<SpecialInstructionForShipment/>
+		<BillingOption>PP</BillingOption> 
+	</ShipmentInformation>	
+    </OpenShipment>
+   </OpenShipments> 
