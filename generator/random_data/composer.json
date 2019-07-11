@@ -1,0 +1,13 @@
+{
+    "name": "dudek/random_data",
+    "authors": [
+        {
+            "name": "sprawdzik",
+            "email": "prawdzik.sebastian@gmail.com"
+        }
+    ],
+    "require": {
+        "ramsey/uuid": "^3.8",
+        "fzaninotto/faker": "^1.8"
+    }
+}
