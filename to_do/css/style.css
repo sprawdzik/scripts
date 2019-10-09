@@ -1,0 +1,51 @@
+html,body{
+    height: 100%;
+}
+
+body{
+    background-color: lightblue;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* app */
+.app{
+    max-width: 450px;
+    width: 100%;
+    padding: 25px;
+
+    background: rgba(255,255,255,0.7) ;
+    box-shadow: 0 0 62px rgba(0,0,0,0.1);
+}
+
+.app h3{
+    margin:0 0 25px;
+}
+
+.app h4{
+    margin:0 0 25px;
+    border-bottom: 2px solid lightskyblue;
+    
+}
+
+/* new task*/
+
+.new-task-container{
+    margin-bottom: 20px;
+    
+}
+
+/* task-container */
+
+.tasks-container ul{
+	margin: 0;
+	padding: 0;
+    list-style: none;
+    /* background-color: chartreuse; */
+    
+}
+
+.single-task{
+    margin-bottom: 12px;
+}
