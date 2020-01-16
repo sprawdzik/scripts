@@ -5,7 +5,9 @@ require_once "vendor/autoload.php";
 // config
 $cnfg_firstName = true;
 $cnfg_lastName = true;
+$cnfg_address = true;
 $cnfg_pesel = true;
+$cnfg_nip = true;
 $cnfg_dob = false;
 $cnfg_city = true;
 $cnfg_mail = false;
@@ -19,7 +21,7 @@ $filename = date('YmdHis').".txt";
 // use the factory to create a Faker/Generator instance
 $faker = Faker\Factory::create('pl_PL');
 
-for ($i = 0; $i < 20000; $i++) {
+for ($i = 0; $i < 20; $i++) {
 
     echo $data = person($i) . PHP_EOL;
     save($data);
@@ -27,7 +29,7 @@ for ($i = 0; $i < 20000; $i++) {
 
 function person($i)
 {
-    global $faker, $sep, $cnfg_firstName, $cnfg_lastName, $cnfg_pesel, $cnfg_dob, $cnfg_city,$cnfg_mail,$cnfg_company, $cnfg_regon, $cnfg_password;
+    global $faker, $sep, $cnfg_firstName, $cnfg_lastName, $cnfg_address, $cnfg_pesel, $cnfg_nip, $cnfg_dob, $cnfg_city,$cnfg_mail,$cnfg_company, $cnfg_regon, $cnfg_password;
     $name = '';
     // start first name
     if ($cnfg_firstName) {
@@ -55,10 +57,29 @@ function person($i)
         if ($i == 0) {
             $name .= "Lastname" . $sep;
         } else {
-            $name .= $faker->lastName() . $sep;
+            switch ($gender) {
+                case '0':
+                    $name .= $faker->lastName('male') . $sep;
+                    break;
+                case '1':
+                    $name .= $faker->lastName('female') . $sep;
+                    break;
+                default:
+                    $name .= $faker->lastName() . $sep;
+                    break;
+            }
         }
     }
     // end last name
+    // start address
+    if ($cnfg_address) {
+        if ($i == 0) {
+            $name .= "Address" . $sep;
+        } else {
+            $name .= $faker->address() . $sep;
+        }
+    }
+    // end address
     // start pesel
     if ($cnfg_pesel) {
         if ($i == 0) {
@@ -68,6 +89,15 @@ function person($i)
         }
     }
     // end last name
+    // start nip
+    if ($cnfg_nip) {
+        if ($i == 0) {
+            $name .= "NIP" . $sep;
+        } else {
+            $name .= $faker->taxpayerIdentificationNumber() . $sep;
+        }
+    }
+    // end nip
     // start day of birth
     if ($cnfg_dob) {
         if ($i == 0) {
